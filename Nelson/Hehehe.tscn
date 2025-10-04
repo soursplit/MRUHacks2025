@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqvgl"]
 size = Vector2(96, 96)
 
-[node name="Hehehe" type="Node2D"]
+[node name="Level 1" type="Node2D"]
 
 [node name="rigidBodyPlayer2" parent="." instance=ExtResource("6_71pwu")]
 position = Vector2(135, 736)
@@ -133,3 +133,39 @@ polygon = PackedVector2Array(320, 0, 320, 320, 384, 320, 384, 0)
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="wall"]
 position = Vector2(0, 576)
 polygon = PackedVector2Array(320, 0, 320, 320, 384, 320, 384, 0)
+
+[node name="WoodBox2" type="RigidBody2D" parent="."]
+position = Vector2(880, 864)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox2"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("5_bqvgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox2"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_bqvgl")
+
+[node name="WoodBox3" type="RigidBody2D" parent="."]
+position = Vector2(632, 576)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox3"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("5_bqvgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox3"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_bqvgl")
+
+[node name="WoodBox4" type="RigidBody2D" parent="."]
+position = Vector2(1296, 216)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox4"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("5_bqvgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox4"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_bqvgl")
