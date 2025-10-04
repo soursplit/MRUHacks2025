@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5lg2nju0gsw8"]
+[gd_scene load_steps=8 format=3 uid="uid://c5lg2nju0gsw8"]
 
 [ext_resource type="PackedScene" uid="uid://c0wjgxc721ppi" path="res://RigidPlayer.tscn" id="1_xdadj"]
 [ext_resource type="Script" uid="uid://ctbh1yj18mamp" path="res://P2rigid_player.gd" id="2_1y8me"]
 [ext_resource type="PackedScene" uid="uid://cj388qs1rlbsb" path="res://Chain.tscn" id="3_n7ypv"]
+[ext_resource type="Script" uid="uid://wg5jtbg844kp" path="res://door_2.gd" id="4_1y8me"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0s5r2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7j8ne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ypv"]
+size = Vector2(258, 109)
 
 [node name="Level 2" type="Node2D"]
 
@@ -118,3 +122,18 @@ position = Vector2(1744, 624)
 rotation = 3.14159
 scale = Vector2(1, 1.91893)
 polygon = PackedVector2Array(320, 0, 320, 85.6421, 320, 209.151, 320, 320, 384, 320, 384, 187.034, 384, 0)
+
+[node name="Door 2" type="Area2D" parent="."]
+script = ExtResource("4_1y8me")
+
+[node name="ColorRect" type="ColorRect" parent="Door 2"]
+offset_left = 1485.0
+offset_top = 47.0
+offset_right = 1739.0
+offset_bottom = 153.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door 2"]
+position = Vector2(1614, 99.5)
+shape = SubResource("RectangleShape2D_n7ypv")
+
+[connection signal="body_entered" from="Door 2" to="Door 2" method="_on_body_entered"]
