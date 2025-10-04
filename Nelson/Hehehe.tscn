@@ -12,45 +12,87 @@ size = Vector2(128, 128)
 [node name="Hehehe" type="Node2D"]
 
 [node name="rigidBodyPlayer2" parent="." instance=ExtResource("6_71pwu")]
-position = Vector2(424, 536)
+position = Vector2(416, 664)
+mass = 1.0
 
 [node name="rigidBodyPlayer1" parent="." instance=ExtResource("6_71pwu")]
-position = Vector2(424, 88)
+position = Vector2(416, 88)
+mass = 0.733
 script = ExtResource("6_a3twx")
 
 [node name="cainz2" type="Node2D" parent="."]
 position = Vector2(-144, 0)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="cainz2"]
-position = Vector2(568, 512)
+position = Vector2(560, 320)
 node_a = NodePath("../chainLink3")
-node_b = NodePath("../../rigidBodyPlayer2")
+node_b = NodePath("../chainLink4")
 
 [node name="chainLink" parent="cainz2" instance=ExtResource("5_71pwu")]
-position = Vector2(568, 192)
+position = Vector2(560, 160)
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="cainz2"]
-position = Vector2(568, 256)
+position = Vector2(560, 192)
 scale = Vector2(0.368783, 1.25672)
 node_a = NodePath("../chainLink")
 node_b = NodePath("../chainLink2")
 
 [node name="chainLink2" parent="cainz2" instance=ExtResource("5_71pwu")]
-position = Vector2(568, 320)
+position = Vector2(560, 224)
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="cainz2"]
-position = Vector2(568, 384)
+position = Vector2(560, 256)
 scale = Vector2(0.368783, 1.25672)
 node_a = NodePath("../chainLink2")
 node_b = NodePath("../chainLink3")
 
 [node name="chainLink3" parent="cainz2" instance=ExtResource("5_71pwu")]
-position = Vector2(568, 448)
+position = Vector2(560, 288)
 
 [node name="PinJoint2D4" type="PinJoint2D" parent="cainz2"]
-position = Vector2(568, 128)
+position = Vector2(560, 128)
 node_a = NodePath("../../rigidBodyPlayer1")
 node_b = NodePath("../chainLink")
+
+[node name="chainLink4" parent="cainz2" instance=ExtResource("5_71pwu")]
+position = Vector2(560, 352)
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="cainz2"]
+position = Vector2(560, 384)
+node_a = NodePath("../chainLink4")
+node_b = NodePath("../chainLink5")
+
+[node name="chainLink5" parent="cainz2" instance=ExtResource("5_71pwu")]
+position = Vector2(560, 416)
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="cainz2"]
+position = Vector2(560, 448)
+node_a = NodePath("../chainLink5")
+node_b = NodePath("../chainLink6")
+
+[node name="chainLink6" parent="cainz2" instance=ExtResource("5_71pwu")]
+position = Vector2(560, 480)
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="cainz2"]
+position = Vector2(560, 512)
+node_a = NodePath("../chainLink6")
+node_b = NodePath("../chainLink7")
+
+[node name="chainLink7" parent="cainz2" instance=ExtResource("5_71pwu")]
+position = Vector2(560, 544)
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="cainz2"]
+position = Vector2(560, 576)
+node_a = NodePath("../chainLink7")
+node_b = NodePath("../chainLink8")
+
+[node name="chainLink8" parent="cainz2" instance=ExtResource("5_71pwu")]
+position = Vector2(560, 608)
+
+[node name="PinJoint2D9" type="PinJoint2D" parent="cainz2"]
+position = Vector2(560, 640)
+node_a = NodePath("../chainLink8")
+node_b = NodePath("../../rigidBodyPlayer2")
 
 [node name="Block2" parent="." instance=ExtResource("4_bqvgl")]
 position = Vector2(88, 888)
