@@ -1,25 +1,40 @@
 extends RigidBody2D
 
-var speed = 500
+@onready var healthBar = $HealthBar
+
+var move_direction = Vector2.ZERO
+var speed = 2000
+
+var maxHealth = 150
+var health = 3
+
+func _ready():
+	healthBar.set_health_bar(health,maxHealth)
 
 func _physics_process(delta):
-	var input_vector = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
-		input_vector.x += 1
-	if Input.is_action_pressed("move_left"):
-		input_vector.x -= 1
-	if Input.is_action_pressed("move_down"):
-		input_vector.y += 1
-	if Input.is_action_pressed("move_up"):
-		input_vector.y -= 1
+	# Get input and update move_direction
+	move_direction = Vector2.ZERO
+	if Input.is_action_pressed("P1 Right"):
+		move_direction.x += 1
+	if Input.is_action_pressed("P1 Left"):
+		move_direction.x -= 1
+	if Input.is_action_pressed("P1 Up"):
+		move_direction.y -= 1
+	if Input.is_action_pressed("P1 Down"):
+		move_direction.y += 1
 	
-	if input_vector.length() > 0:
-		# Apply acceleration or constant force to move
-		velocity = input_vector.normalized() * speed 
-	else:
-		# Apply friction (deceleration) when no input
-		# Use lerp for a smooth slowdown
-		velocity = lerp(velocity, Vector2.ZERO, friction_factor) 
+	# Normalize the direction to prevent faster diagonal movement
+	move_direction = move_direction.normalized()
 
-	# Apply the velocity to the RigidBody2D
-		linear_velocity = velocity
+func _integrate_forces(state):
+	# Apply a force based on input
+	state.apply_central_force(move_direction * speed) 
+
+func take_damage(damage:int):
+	health -= damage
+	healthBar.set_health_bar(health,maxHealth)
+	print("Damagedwa")
+	if health <= 0:
+		$Sprite2D.visible = false
+		print("Dead")
+	

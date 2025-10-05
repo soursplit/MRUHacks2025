@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wjgxc721ppi"]
+[gd_scene load_steps=5 format=3 uid="uid://c0wjgxc721ppi"]
 
 [ext_resource type="Script" uid="uid://buvyq2l7p3fd7" path="res://rigid_body_2d.gd" id="1_ufsin"]
 [ext_resource type="Texture2D" uid="uid://ruc84cx52ysv" path="res://icon.svg" id="2_t020p"]
+[ext_resource type="Script" uid="uid://ljinfdb4m2k6" path="res://healthBar.gd" id="3_t020p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77287"]
 size = Vector2(64, 64)
@@ -17,3 +18,14 @@ shape = SubResource("RectangleShape2D_77287")
 position = Vector2(0, 8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_t020p")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_top = -49.0
+offset_right = 4.0
+offset_bottom = -22.0
+script = ExtResource("3_t020p")
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
