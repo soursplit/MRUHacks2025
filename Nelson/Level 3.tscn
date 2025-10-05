@@ -1,3 +1,233 @@
-[gd_scene load_steps=0 format=3 uid="uid://dgf2xsvxr5si2"]
+[gd_scene load_steps=10 format=3 uid="uid://dgf2xsvxr5si2"]
+
+[ext_resource type="PackedScene" uid="uid://c0wjgxc721ppi" path="res://RigidPlayer.tscn" id="1_vgf8e"]
+[ext_resource type="Script" uid="uid://ctbh1yj18mamp" path="res://P2rigid_player.gd" id="2_ig3hl"]
+[ext_resource type="PackedScene" uid="uid://cj388qs1rlbsb" path="res://Chain.tscn" id="3_r1o1v"]
+[ext_resource type="Texture2D" uid="uid://cdfmlir64707j" path="res://box.png" id="4_ig3hl"]
+[ext_resource type="Script" uid="uid://g8imnunt16si" path="res://door_3.gd" id="5_r1o1v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fsnw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2dwo8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1o1v"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fsnw"]
+size = Vector2(382, 35)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="wall" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(896, 900)
+rotation = 3.14159
+scale = Vector2(1, 2.27902)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(1648, 616)
+rotation = 3.14159
+scale = Vector2(1, 1.91893)
+polygon = PackedVector2Array(320, 0, 320, 85.6421, 320, 209.151, 320, 320, 384, 320, 384, 187.034, 384, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(1792, 704)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(2026, 704)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(2024, 192)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(1792, 192)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(456, 136)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(712, 448)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="wall"]
+position = Vector2(512, 768)
+rotation = 3.14159
+scale = Vector2(0.999999, 0.200412)
+polygon = PackedVector2Array(320, 0, 320, 37.0385, 320, 85.6421, 320, 320, 384, 320, 384, 275.597, 384, 187.034, 384, 60.5529, 384, 0)
+
+[node name="rigidBodyPlayer2" parent="." groups=["Players"] instance=ExtResource("1_vgf8e")]
+position = Vector2(1753, 816)
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_0fsnw")
+
+[node name="rigidBodyPlayer1" parent="." groups=["Players"] instance=ExtResource("1_vgf8e")]
+position = Vector2(1753, 240)
+collision_layer = 3
+collision_mask = 3
+mass = 0.733
+physics_material_override = SubResource("PhysicsMaterial_2dwo8")
+script = ExtResource("2_ig3hl")
+
+[node name="cainz2" type="Node2D" parent="."]
+position = Vector2(-144, 0)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 472)
+node_a = NodePath("../chainLink3")
+node_b = NodePath("../chainLink4")
+
+[node name="chainLink" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 312)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 344)
+scale = Vector2(0.368783, 1.25672)
+node_a = NodePath("../chainLink")
+node_b = NodePath("../chainLink2")
+
+[node name="chainLink2" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 376)
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 408)
+scale = Vector2(0.368783, 1.25672)
+node_a = NodePath("../chainLink2")
+node_b = NodePath("../chainLink3")
+
+[node name="chainLink3" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 440)
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 280)
+node_a = NodePath("../../rigidBodyPlayer1")
+node_b = NodePath("../chainLink")
+
+[node name="chainLink4" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 504)
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 536)
+node_a = NodePath("../chainLink4")
+node_b = NodePath("../chainLink5")
+
+[node name="chainLink5" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 568)
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 600)
+node_a = NodePath("../chainLink5")
+node_b = NodePath("../chainLink6")
+
+[node name="chainLink6" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 632)
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 664)
+node_a = NodePath("../chainLink6")
+node_b = NodePath("../chainLink7")
+
+[node name="chainLink7" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 696)
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 728)
+node_a = NodePath("../chainLink7")
+node_b = NodePath("../chainLink8")
+
+[node name="chainLink8" parent="cainz2" instance=ExtResource("3_r1o1v")]
+position = Vector2(1897, 760)
+
+[node name="PinJoint2D9" type="PinJoint2D" parent="cainz2"]
+position = Vector2(1897, 792)
+node_a = NodePath("../chainLink8")
+node_b = NodePath("../../rigidBodyPlayer2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 1800, 0, 1800, 900, 0, 900, 0, -5, -9, -5, -75, 1003, 1879, 962, 1903, -191, 9, -43)
+
+[node name="WoodBox" type="RigidBody2D" parent="."]
+position = Vector2(768, 240)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("4_ig3hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_r1o1v")
+
+[node name="WoodBox2" type="RigidBody2D" parent="."]
+position = Vector2(1152, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox2"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("4_ig3hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox2"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_r1o1v")
+
+[node name="WoodBox3" type="RigidBody2D" parent="."]
+position = Vector2(928, 680)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox3"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("4_ig3hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox3"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_r1o1v")
+
+[node name="WoodBox4" type="RigidBody2D" parent="."]
+position = Vector2(1168, 808)
+
+[node name="Sprite2D" type="Sprite2D" parent="WoodBox4"]
+position = Vector2(-16.5625, -16.75)
+scale = Vector2(0.498077, 0.497449)
+texture = ExtResource("4_ig3hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox4"]
+position = Vector2(-16, -16)
+shape = SubResource("RectangleShape2D_r1o1v")
+
+[node name="Door 3" type="Area2D" parent="."]
+script = ExtResource("5_r1o1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door 3"]
+position = Vector2(259, 860.5)
+shape = SubResource("RectangleShape2D_0fsnw")
+
+[node name="ColorRect" type="ColorRect" parent="Door 3"]
+offset_left = 72.0
+offset_top = 845.0
+offset_right = 442.0
+offset_bottom = 885.0
+
+[connection signal="body_entered" from="Door 3" to="Door 3" method="_on_body_entered"]
