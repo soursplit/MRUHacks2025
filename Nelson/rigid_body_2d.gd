@@ -1,23 +1,25 @@
 extends RigidBody2D
 
-var move_direction = Vector2.ZERO
 var speed = 500
 
 func _physics_process(delta):
-	# Get input and update move_direction
-	move_direction = Vector2.ZERO
-	if Input.is_action_pressed("P1 Right"):
-		move_direction.x += 1
-	if Input.is_action_pressed("P1 Left"):
-		move_direction.x -= 1
-	if Input.is_action_pressed("P1 Up"):
-		move_direction.y -= 1
-	if Input.is_action_pressed("P1 Down"):
-		move_direction.y += 1
+	var input_vector = Vector2.ZERO
+	if Input.is_action_pressed("move_right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("move_left"):
+		input_vector.x -= 1
+	if Input.is_action_pressed("move_down"):
+		input_vector.y += 1
+	if Input.is_action_pressed("move_up"):
+		input_vector.y -= 1
 	
-	# Normalize the direction to prevent faster diagonal movement
-	move_direction = move_direction.normalized()
+	if input_vector.length() > 0:
+		# Apply acceleration or constant force to move
+		velocity = input_vector.normalized() * speed 
+	else:
+		# Apply friction (deceleration) when no input
+		# Use lerp for a smooth slowdown
+		velocity = lerp(velocity, Vector2.ZERO, friction_factor) 
 
-func _integrate_forces(state):
-	# Apply a force based on input
-	state.apply_central_force(move_direction * speed) 
+	# Apply the velocity to the RigidBody2D
+		linear_velocity = velocity
