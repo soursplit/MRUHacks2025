@@ -179,13 +179,14 @@ position = Vector2(-8, 3)
 script = ExtResource("6_gif8c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door 1"]
-position = Vector2(1468, 426.5)
+position = Vector2(1758, 447.5)
 shape = SubResource("RectangleShape2D_71pwu")
 
 [node name="ColorRect" type="ColorRect" parent="Door 1"]
-offset_left = 1446.0
-offset_top = 120.0
-offset_right = 1486.0
-offset_bottom = 736.0
+offset_left = 1736.0
+offset_top = 141.0
+offset_right = 1776.0
+offset_bottom = 757.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door 1" to="Door 1" method="_on_body_entered"]
