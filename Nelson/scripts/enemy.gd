@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 ##Code inspired from "Create AI Enemies in Godot4 2D | Godot simple enemy tutorial ." by GameStick
 @onready var target = $"../rigidBodyPlayer2"
-var speed = 150
+var speed = 200
 var health: int =  1
 
 ## Handles physics of moving enemy

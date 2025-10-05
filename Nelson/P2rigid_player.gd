@@ -3,7 +3,7 @@ extends RigidBody2D
 @onready var healthBar = $HealthBar
 
 var move_direction = Vector2.ZERO
-var speed = 2000
+var speed = 1000
 
 
 var maxHealth = 150
@@ -37,4 +37,5 @@ func take_damage(damage:int):
 	print("Damagedwa")
 	if health <= 0:
 		$Sprite2D.visible = false
+		queue_free()
 		print("Dead")
