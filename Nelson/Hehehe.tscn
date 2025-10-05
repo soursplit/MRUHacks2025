@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1q3ichaqd2i0"]
+[gd_scene load_steps=9 format=3 uid="uid://ravqyhiui8r"]
 
 [ext_resource type="PackedScene" uid="uid://bsymhr5h3biq0" path="res://block.tscn" id="4_bqvgl"]
 [ext_resource type="PackedScene" uid="uid://cj388qs1rlbsb" path="res://Chain.tscn" id="5_71pwu"]
 [ext_resource type="Texture2D" uid="uid://cdfmlir64707j" path="res://box.png" id="5_bqvgl"]
 [ext_resource type="PackedScene" uid="uid://c0wjgxc721ppi" path="res://RigidPlayer.tscn" id="6_71pwu"]
 [ext_resource type="Script" uid="uid://ctbh1yj18mamp" path="res://P2rigid_player.gd" id="6_a3twx"]
-[ext_resource type="Script" uid="uid://kyn6u1c2dfql" path="res://area_2d.gd" id="6_gif8c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71pwu"]
 
@@ -13,9 +12,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqvgl"]
 size = Vector2(96, 96)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_71pwu"]
-size = Vector2(56, 615)
 
 [node name="Level 1" type="Node2D"]
 
@@ -173,19 +169,3 @@ texture = ExtResource("5_bqvgl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoodBox4"]
 position = Vector2(-16, -16)
 shape = SubResource("RectangleShape2D_bqvgl")
-
-[node name="Door 1" type="Area2D" parent="."]
-position = Vector2(-8, 3)
-script = ExtResource("6_gif8c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door 1"]
-position = Vector2(1468, 426.5)
-shape = SubResource("RectangleShape2D_71pwu")
-
-[node name="ColorRect" type="ColorRect" parent="Door 1"]
-offset_left = 1446.0
-offset_top = 120.0
-offset_right = 1486.0
-offset_bottom = 736.0
-
-[connection signal="body_entered" from="Door 1" to="Door 1" method="_on_body_entered"]
