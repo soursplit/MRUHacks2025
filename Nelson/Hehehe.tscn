@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ravqyhiui8r"]
+[gd_scene load_steps=13 format=3 uid="uid://ravqyhiui8r"]
 
 [ext_resource type="PackedScene" uid="uid://bsymhr5h3biq0" path="res://block.tscn" id="4_bqvgl"]
 [ext_resource type="PackedScene" uid="uid://cj388qs1rlbsb" path="res://Chain.tscn" id="5_71pwu"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c0wjgxc721ppi" path="res://RigidPlayer.tscn" id="6_71pwu"]
 [ext_resource type="Script" uid="uid://ctbh1yj18mamp" path="res://P2rigid_player.gd" id="6_a3twx"]
 [ext_resource type="Script" uid="uid://kyn6u1c2dfql" path="res://area_2d.gd" id="6_gif8c"]
+[ext_resource type="Texture2D" uid="uid://273k6wfxutdm" path="res://wall.png" id="6_kofml"]
+[ext_resource type="Texture2D" uid="uid://bx7b1wkcu8572" path="res://door.png" id="8_gif8c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71pwu"]
 
@@ -138,6 +140,16 @@ polygon = PackedVector2Array(320, 0, 320, 320, 384, 320, 384, 0)
 position = Vector2(0, 576)
 polygon = PackedVector2Array(320, 0, 320, 320, 384, 320, 384, 0)
 
+[node name="Sprite2D2" type="Sprite2D" parent="wall"]
+position = Vector2(352, 740)
+scale = Vector2(1.82857, 2.41176)
+texture = ExtResource("6_kofml")
+
+[node name="Sprite2D3" type="Sprite2D" parent="wall"]
+position = Vector2(352, 164)
+scale = Vector2(1.82857, 2.41176)
+texture = ExtResource("6_kofml")
+
 [node name="WoodBox2" type="RigidBody2D" parent="."]
 position = Vector2(880, 864)
 
@@ -188,5 +200,11 @@ offset_top = 141.0
 offset_right = 1776.0
 offset_bottom = 757.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Door 1"]
+position = Vector2(1744, 449.834)
+rotation = 1.5708
+scale = Vector2(6.34204, 1)
+texture = ExtResource("8_gif8c")
 
 [connection signal="body_entered" from="Door 1" to="Door 1" method="_on_body_entered"]
