@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77287"]
 size = Vector2(64, 64)
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["Players"]]
+[node name="RigidBody2D" type="RigidBody2D"]
 script = ExtResource("1_ufsin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

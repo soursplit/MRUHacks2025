@@ -19,11 +19,11 @@ size = Vector2(56, 615)
 
 [node name="Level 1" type="Node2D"]
 
-[node name="rigidBodyPlayer2" parent="." instance=ExtResource("6_71pwu")]
+[node name="rigidBodyPlayer2" parent="." groups=["Players"] instance=ExtResource("6_71pwu")]
 position = Vector2(135, 736)
 physics_material_override = SubResource("PhysicsMaterial_71pwu")
 
-[node name="rigidBodyPlayer1" parent="." instance=ExtResource("6_71pwu")]
+[node name="rigidBodyPlayer1" parent="." groups=["Players"] instance=ExtResource("6_71pwu")]
 position = Vector2(135, 160)
 mass = 0.733
 physics_material_override = SubResource("PhysicsMaterial_a3twx")

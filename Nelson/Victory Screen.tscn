@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1vwij1ar3nch"]
+
+[ext_resource type="Texture2D" uid="uid://ydy0384bn6q3" path="res://Winner-Winner-Chicken-Dinner_280x183.png" id="1_8abdo"]
+
+[node name="VictoryScreen" type="Node2D"]
+
+[node name="Winner-winner-chicken-dinner280x183" type="Sprite2D" parent="."]
+position = Vector2(897, 452)
+scale = Vector2(3.18717, 2.43597)
+texture = ExtResource("1_8abdo")

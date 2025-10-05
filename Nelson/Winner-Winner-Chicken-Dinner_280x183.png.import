@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byrjgvq6p33p8"
-path="res://.godot/imported/Winner-Winner-Chicken-Dinner_280x183.png-8095cb5d9bc9e4122e87def17f061cec.ctex"
+uid="uid://ydy0384bn6q3"
+path="res://.godot/imported/Winner-Winner-Chicken-Dinner_280x183.png-d40af3affe609224734df6337c5007bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Winner-Winner-Chicken-Dinner_280x183.png"
-dest_files=["res://.godot/imported/Winner-Winner-Chicken-Dinner_280x183.png-8095cb5d9bc9e4122e87def17f061cec.ctex"]
+source_file="res://Winner-Winner-Chicken-Dinner_280x183.png"
+dest_files=["res://.godot/imported/Winner-Winner-Chicken-Dinner_280x183.png-d40af3affe609224734df6337c5007bf.ctex"]
 
 [params]
 
