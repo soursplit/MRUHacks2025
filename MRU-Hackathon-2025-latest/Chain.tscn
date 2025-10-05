@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj388qs1rlbsb"]
+
+[ext_resource type="Texture2D" uid="uid://ruc84cx52ysv" path="res://icon.svg" id="1_yl11u"]
+[ext_resource type="PackedScene" uid="uid://0lb7qcpa2pkg" path="res://scenes/damage_source.tscn" id="2_qu6l2"]
+[ext_resource type="Script" uid="uid://dr1lu6gjfdef4" path="res://scenes/damage_sourcePlayer.gd" id="3_8i41k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnn18"]
+radius = 6.0
+height = 44.0
+
+[node name="chainLink" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.5)
+texture = ExtResource("1_yl11u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_bnn18")
+
+[node name="Damage Source" parent="." instance=ExtResource("2_qu6l2")]
+scale = Vector2(0.119040005, 0.39999998)
+script = ExtResource("3_8i41k")
